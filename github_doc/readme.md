@@ -154,3 +154,14 @@ You can simply use this images on any system using command below
 ```
 docker run ghcr.io/bugsfounder/hello-world-ghcr:latest
 ```
+
+## If you are getting
+```
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+Error response from daemon: Get "https://registry-1.docker.io/v2/": unauthorized: incorrect username or password
+```
+## Use below command to make it work
+```
+# echo "YOUR_PERSONAL_ACCESS_TOKEN" | docker login ghcr.io -u USERNAME --password-stdin
+echo "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" | docker login ghcr.io -u bugsfounder --password-stdin
+```
